@@ -899,4 +899,15 @@ for i, state in enumerate(state_manager.states):
 
 ---
 
+## Author
+
+**권지회 (Jihoe Kwon)**
+한국지질자원연구원 AI융합연구실
+Korea Institute of Geoscience and Mineral Resources (KIGAM)
+AI Convergence Research Lab
+
+Copyright (c) 2025 권지회, 한국지질자원연구원. All rights reserved.
+
+---
+
 *POROUS v0.1.0 - Instruction Manual*

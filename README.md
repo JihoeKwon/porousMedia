@@ -266,10 +266,13 @@ python run_example.py --vtk --output-dir ./output
 
 ---
 
-## License
-
-MIT License
-
 ## Author
 
-POROUS Development Team
+**권지회 (Jihoe Kwon)**
+한국지질자원연구원 AI융합연구실
+Korea Institute of Geoscience and Mineral Resources (KIGAM)
+AI Convergence Research Lab
+
+## License
+
+Copyright (c) 2025 권지회, 한국지질자원연구원. All rights reserved.
