@@ -111,12 +111,12 @@ $$P_c = P_e \cdot S_e^{-1/\lambda}$$
 
 #### 3.1 Integral Finite Difference Method (IFDM)
 
-제어 체적 V_n에 대한 적분형 보존 방정식:
+제어 체적 V_i에 대한 적분형 보존 방정식:
 
-$$\frac{d}{dt}\int_{V_n} M dV = \int_{\Gamma_n} \mathbf{F} \cdot \mathbf{n} dA + \int_{V_n} q dV$$
+$$\frac{d}{dt}\int_{V_i} M dV = \int_{\Gamma_i} \mathbf{F} \cdot \mathbf{n} dA + \int_{V_i} q dV$$
 
 이산화된 형태:
-$$V_n \frac{M_n^{n+1} - M_n^n}{\Delta t} = \sum_m A_{nm} F_{nm} + V_n q_n$$
+$$V_i \frac{M_i^{n+1} - M_i^n}{\Delta t} = \sum_j A_{ij} F_{ij} + V_i q_i$$
 
 #### 3.2 Newton-Raphson Iteration
 
