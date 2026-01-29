@@ -84,7 +84,9 @@ $$\mathbf{v}_\beta = -\frac{k \cdot k_{r\beta}}{\mu_\beta}(\nabla P_\beta - \rho
 
 $$P_c = P_g - P_l$$
 
-기체상 압력과 액체상 압력의 차이로 정의됩니다.
+- $P_c$: 모세관압 [Pa]
+- $P_g$: 기체상 압력 [Pa]
+- $P_l$: 액체상 압력 [Pa]
 
 ### 2. Constitutive Relations
 
@@ -99,6 +101,15 @@ $$S_e = \frac{S_l - S_{lr}}{1 - S_{lr} - S_{gr}}$$
 **van Genuchten-Mualem Model:**
 $$k_{rl} = \sqrt{S_e}[1-(1-S_e^{1/m})^m]^2$$
 
+- $k_{rl}$: 액체상 상대투수율 [-]
+- $k_{rg}$: 기체상 상대투수율 [-]
+- $S_e$: 유효 포화도 (effective saturation) [-]
+- $S_l$: 액체상 포화도 [-]
+- $S_{lr}$: 잔류 액체 포화도 (residual liquid saturation) [-]
+- $S_{gr}$: 잔류 기체 포화도 (residual gas saturation) [-]
+- $n_l$, $n_g$: Corey 지수 [-]
+- $m$: van Genuchten 형상 파라미터 [-]
+
 #### 2.2 Capillary Pressure Models
 
 **van Genuchten:**
@@ -107,25 +118,49 @@ $$P_c = \frac{1}{\alpha}(S_e^{-1/m} - 1)^{1-m}$$
 **Brooks-Corey:**
 $$P_c = P_e \cdot S_e^{-1/\lambda}$$
 
+- $\alpha$: van Genuchten 파라미터 [1/Pa]
+- $P_e$: 진입압력 (entry pressure) [Pa]
+- $\lambda$: Brooks-Corey 공극 크기 분포 지수 [-]
+
 ### 3. Numerical Method
 
 #### 3.1 Integral Finite Difference Method (IFDM)
 
-제어 체적 V_i에 대한 적분형 보존 방정식:
+제어 체적 $V_i$에 대한 적분형 보존 방정식:
 
 $$\frac{d}{dt}\int_{V_i} M dV = \int_{\Gamma_i} \mathbf{F} \cdot \mathbf{n} dA + \int_{V_i} q dV$$
 
 이산화된 형태:
 $$V_i \frac{M_i^{n+1} - M_i^n}{\Delta t} = \sum_j A_{ij} F_{ij} + V_i q_i$$
 
+- $i$: 공간 인덱스 (셀 번호)
+- $j$: 이웃 셀 인덱스
+- $n$: 시간 인덱스
+- $V_i$: 셀 $i$의 체적 [m³]
+- $M$: 단위 체적당 질량 축적량 [kg/m³]
+- $\Gamma_i$: 셀 $i$의 경계면
+- $\mathbf{F}$: 질량 플럭스 벡터 [kg/(m²·s)]
+- $\mathbf{n}$: 외향 법선 벡터
+- $\Delta t$: 시간 간격 [s]
+- $A_{ij}$: 셀 $i$, $j$ 사이의 연결 면적 [m²]
+- $F_{ij}$: 셀 $i$, $j$ 사이의 플럭스 [kg/(m²·s)]
+- $q_i$: 셀 $i$의 소스/싱크 항 [kg/(m³·s)]
+
 #### 3.2 Newton-Raphson Iteration
 
-비선형 잔차 방정식 R(x) = 0을 풀기 위해:
+비선형 잔차 방정식 $\mathbf{R}(\mathbf{x}) = 0$을 풀기 위해:
 
 1. Jacobian 행렬 계산: $J_{ij} = \partial R_i / \partial x_j$
-2. 선형 시스템 풀이: $J \cdot \delta x = -R$
-3. 변수 갱신: $x^{k+1} = x^k + \delta x$
-4. 수렴 조건: $||R|| < \epsilon$ 만족 시 종료
+2. 선형 시스템 풀이: $\mathbf{J} \cdot \delta \mathbf{x} = -\mathbf{R}$
+3. 변수 갱신: $\mathbf{x}^{k+1} = \mathbf{x}^k + \delta \mathbf{x}$
+4. 수렴 조건: $||\mathbf{R}|| < \epsilon$ 만족 시 종료
+
+- $\mathbf{R}$: 잔차 벡터 (residual vector)
+- $\mathbf{x}$: 주변수 벡터 (primary variables)
+- $\mathbf{J}$: Jacobian 행렬
+- $\delta \mathbf{x}$: 변수 보정량
+- $k$: Newton 반복 인덱스
+- $\epsilon$: 수렴 허용 오차
 
 #### 3.3 Time Stepping
 
