@@ -1,6 +1,6 @@
 # POROUS 예제 모음
 
-POROUS 시뮬레이터의 검증 및 사용법 학습을 위한 예제 모음입니다.
+**POROUS** (**P**article **O**utflow and **R**elaxation **O**f **U**nderground **S**tructures) 시뮬레이터의 검증 및 사용법 학습을 위한 예제 모음입니다.
 
 ## 예제 목록
 

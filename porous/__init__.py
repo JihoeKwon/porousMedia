@@ -1,9 +1,9 @@
 """
-POROUS: Porous Media Multiphase Flow Simulator
+POROUS: Particle Outflow and Relaxation Of Underground Structures
 
-A Python-based simulator for multiphase flow in porous media,
-similar to TOUGH2. Supports water-steam-air systems with
-1D/2D/3D structured grids.
+A Python-based simulator for modeling particle loss in underground structures
+and multiphase flow in porous media. Similar to TOUGH2, supports water-steam-air
+systems with 1D/2D/3D structured grids.
 """
 
 __version__ = "0.1.0"

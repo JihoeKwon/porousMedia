@@ -1,6 +1,8 @@
 # POROUS Instruction Manual
 
-다공성 매질 다상 유동 시뮬레이터 상세 사용 설명서
+**POROUS** (**P**article **O**utflow and **R**elaxation **O**f **U**nderground **S**tructures)
+
+지하 구조물 토립자 유실 및 다공성 매질 다상 유동 시뮬레이터 상세 사용 설명서
 
 ---
 
@@ -910,4 +912,4 @@ Copyright (c) 2025 권지회, 한국지질자원연구원. All rights reserved.
 
 ---
 
-*POROUS v0.1.0 - Instruction Manual*
+*POROUS v0.1.0 - Particle Outflow and Relaxation Of Underground Structures*

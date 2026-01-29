@@ -1,6 +1,6 @@
-# POROUS: Porous Media Multiphase Flow Simulator
+# POROUS: Particle Outflow and Relaxation Of Underground Structures
 
-**POROUS**는 다공성 매질에서의 다상 유동을 시뮬레이션하는 Python 기반 수치해석 프로그램입니다. TOUGH2와 유사한 Integral Finite Difference Method (IFDM)를 사용하며, 물-공기(등온) 및 물-증기(비등온) 시스템을 지원합니다.
+**POROUS** (**P**article **O**utflow and **R**elaxation **O**f **U**nderground **S**tructures)는 지하 구조물에서의 토립자 유실 및 다공성 매질 내 다상 유동을 시뮬레이션하는 Python 기반 수치해석 프로그램입니다. TOUGH2와 유사한 Integral Finite Difference Method (IFDM)를 사용하며, 물-공기(등온) 및 물-증기(비등온) 시스템을 지원합니다.
 
 ## Features
 
